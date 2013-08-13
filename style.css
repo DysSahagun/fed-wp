@@ -1,0 +1,733 @@
+/*
+Theme Name: Front-end Design template
+Template: twentythirteen
+Author: Dys Sahagun
+Author URI: http://intlred.com/
+Description: A front-end design theme
+Version: 1.0
+*/
+
+/*------------------------- Reset -------------------------*/
+.unlist {list-style:none;}
+
+/*------------------------- Clearfix: for parents with floated children -------------------------*/
+.clearfix:before,
+.clearfix:after,
+.pagination:before,
+.pagination:after,
+.page-nav:before,
+.page-nav:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after,
+.pagination:after {
+    clear: both;
+}
+
+.clearfix,
+.pagination,
+.page-nav {
+    *zoom: 1;
+}
+
+/*------------------------- Image replacement: for elements with background image as main image such as a heading logo -------------------------*/
+.ir {
+	display:block;
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*------------------------- Hide visually: for content which is part of the document outline -------------------------*/
+.visuallyhidden,
+.page-nav .label {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.reverse {
+    clip:rect(auto, auto, auto, auto);
+    height:auto;
+    margin:auto;
+    overflow:auto;
+    padding:inherit;
+    position:inherit;
+    width:auto;
+}
+
+/*------------------------- Skeleton: fixes the CSS box model and adds a centered content with maximum width which could be defined in px -------------------------*/
+#masthead-cr,
+#main-cr,
+#colophon-cr {
+	margin:0 auto;
+	max-width:100%;
+}
+
+#masthead-cr,
+#content,
+#secondary-cr,
+#colophon-cr {padding:1em;}
+
+/*------------------------- Set -------------------------*/
+::-moz-selection {
+	color: #fff;
+    background: #222;
+}
+
+::selection {
+	color: #fff;
+    background: #222;
+}
+
+/* If the content is less than the viewport's height, the background might be different from the footer -- this sets the bg for the document and colophon the same to provide continuity */
+html, #colophon {background-color:transparent;}
+
+html, button, input, select, textarea,
+.ui-btn a {color:#222;}
+
+/* These elements use fonts so might as well style them consistently */
+html, button, input, select, textarea {font-family:Arial, Helvetica;}
+
+/*------------------------- Transition -------------------------*/
+.no-touch-links,
+.prev-page,
+.next-page {
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+/*------------------------- Text -------------------------*/
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {margin-bottom:.5em;}
+
+p,
+ol, ul {margin-bottom:1em;}
+
+p:last-child {margin-bottom:0;}
+
+p {line-height:1.5;}
+
+blockquote {
+	margin:0 2em 1em;
+	font-size:1.25em;
+	font-style:italic;
+	font-family:Georgia, Times, serif;
+	color:#666;
+}
+
+/*------------------------- Tables -------------------------*/
+th, td {
+	padding:.5em 1em;
+	border-bottom:1px solid #ccc;
+}
+
+th {
+	font-weight:normal;
+	color:#999;
+	border-bottom-width:2px;
+	text-align:left;
+}
+
+tr:hover td {background-color:#fafafa;}
+
+/*------------------------- Pagination -------------------------*/
+.page-content-info,
+.page-nav {
+	float: left;
+}
+
+.page-content-info {
+	margin-bottom: 0;
+	line-height: 2.5;
+}
+
+.page-content-range {
+	font-weight: bold;
+}
+
+.page-nav {
+	margin-left: 1em;
+}
+
+.prev-page,
+.next-page {
+	position: relative;
+	float: left;
+	display: block;
+	padding: 1.25em;
+}
+
+.prev-page:active,
+.next-page:active {
+	top: 1px;
+}
+
+.prev-page:hover,
+.next-page:hover {
+	background-color: #ccc;
+	background-color: hsla(0, 0%, 0%, .15);
+	border-radius: .25em;
+}
+
+.prev-page:before,
+.next-page:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin-top: -9px;
+	width: 0;
+	height: 0;
+}
+
+.prev-page:before {
+	left: 50%;
+	margin-left: -8px;
+}
+
+.next-page:before {
+	right: 50%;
+	margin-right: -8px;
+}
+
+.prev-page:before {
+	border-style: solid;
+	border-width: 9px 12px 9px 0;
+	border-color: transparent #808080 transparent transparent;
+}
+
+.next-page:before {
+	border-style: solid;
+	border-width: 9px 0 9px 12px;
+	border-color: transparent transparent transparent #808080;
+}
+
+/*------------------------- Forms -------------------------*/
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+textarea {color:#808080;}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+input[type="password"]:focus,
+textarea:focus {color:#222;}
+
+/*------------------------- UI texts -------------------------*/
+.ui-txt {
+	padding:.25em;
+	border:1px solid #ccc;
+	border-radius:0.25em;
+	box-shadow:0 1px 0 #e5e5e5 inset;
+}
+
+.ui-txt:hover {border-color:#bfbfbf;}
+
+.ui-txt-select {padding:.15em;}
+
+/*------------------------- UI buttons -------------------------*/
+.ui-btn {
+	position:relative;
+	background-color:#ccc;
+	border-radius:0.25em;
+}
+
+.ui-btn {
+	box-shadow:0 1px 0 #bfbfbf;
+}
+
+.ui-btn button,
+.ui-btn a {padding:.25em .65em;}
+
+.ui-btn-secondary {
+	background-color:#e5e5e5;
+}
+
+.ui-btn-secondary button,
+.ui-btn-secondary a {
+	color:#666;
+}
+
+/* Interactions */
+.ui-btn-primary:hover {background-color:#bfbfbf;}
+.ui-btn-primary:active {background-color:#b3b3b3;}
+
+.ui-btn-secondary:hover {background-color:#d9d9d9;}
+.ui-btn-secondary:active {background-color:#ccc;}
+
+.ui-btn-primary:active,
+.ui-btn-secondary:active {top:1px;}
+
+.ui-btn-disabled {background-color:#bfbfbf;}
+
+.ui-btn-disabled button,
+.ui-btn-disabled a {
+	color:#999;
+	text-shadow:-1px 1px 0 #d9d9d9;
+}
+
+/*------------------------- Main nav -------------------------*/
+.nav-menu li a {
+	color:#222;
+	text-decoration:none;
+}
+
+/*------------------------- Footer -------------------------*/
+.footer-nav {margin-bottom:1em;}
+
+.footer-nav-list,
+.copyright {text-align:center;}
+
+.footer-nav-list li {display:inline-block;}
+
+.footer-nav-list li a,
+.copyright {font-size:.875em;}
+
+.footer-nav-list li a {padding:.25em 1em;}
+
+.copyright {
+	color: hsla(0, 0%, 0%, .5);
+}
+
+/*------------------------- Media queries -------------------------*/
+@media only screen and (min-width: 320px) {
+	
+	/*------------------------- Clearfix -------------------------*/
+	.clearfix:before,
+	.clearfix:after,
+	#masthead-cr:before,
+	#masthead-cr:after,
+	.field-action .field-item:before,
+	.field-action .field-item:after {
+		content: " ";
+		display: table;
+	}
+	
+	.clearfix:after,
+	#masthead-cr:after,
+	.field-action .field-item:after {
+		clear: both;
+	}
+	
+	.clearfix,
+	#masthead-cr,
+	.field-action .field-item {
+		*zoom: 1;
+	}
+	
+	/*------------------------- Header -------------------------*/
+	.masthead-headers {float:left;}
+	
+	.nav-menu,
+	.main-nav-show .menu-toggle {		
+		background-color:#e5e5e5;
+		border-radius:0.25em;
+	}
+	
+	.nav-menu {
+		padding:.5em .75em;
+		background-color:#e5e5e5;
+		border-top-right-radius:0;
+	}
+	
+	.nav-menu li a {
+		display:block;
+		padding:.25em;
+		white-space:nowrap;
+	}	
+	
+	.main-nav {
+		position:absolute;
+		top: 0;
+		right: 0;
+		margin-top:.5em;
+		margin-right:.5em;
+	}
+	
+	.main-nav-hide .nav-menu {display:none;}
+	.main-nav-show .nav-menu {display:block;}
+	
+	.nav-menu {
+		position:absolute;
+		top:100%;
+		right:0;
+		/* Set this up for admin nav
+		margin-top:8px; */ /* Relative to the size of the triangle in .nav-menu:before */
+	}
+	
+	.nav-menu li a {padding-right:2em;}
+	
+	/* Set this up for the admin nav
+	.nav-menu:before {
+		content:"";
+		position:absolute;
+		top:0;
+		right:0;
+		margin-top:-8px;
+		margin-right:16px;
+		width:0px;
+		height:0px;
+		border-style:solid;
+		border-width:0 8px 8px 8px;
+		border-color:transparent transparent #e5e5e5 transparent; /* Color must be same as the background color of the menu */
+	/*}*/
+	
+	.menu-toggle {
+		padding:.25em 1.5em .25em .5em;
+		font-size:1em;
+	}
+	
+	.main-nav-show .menu-toggle {
+		border-bottom-left-radius:0;
+		border-bottom-right-radius:0;
+	}
+	
+	.menu-toggle:hover {cursor:pointer;}
+	
+	.menu-toggle:before {
+		content:"";
+		position:absolute;
+		top:50%;
+		right:0;
+		margin-top:-3px;
+		margin-right:6px;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 6px 6px 0 6px;
+		border-color: #222 transparent transparent transparent;
+	}
+	
+	/*------------------------- Field action -------------------------*/
+	.ui-btn,
+	.field-item > button {
+		float:left;
+		margin-right:1em;
+	}
+	
+	.ui-btn:last-child,
+	.field-item > button:last-child {margin-right:0;}
+	
+}
+
+@media only screen and (min-width: 480px) {
+}
+
+@media only screen and (min-width: 600px) {
+	
+	/*------------------------- Clearfix -------------------------*/
+	.clearfix:before,
+	.clearfix:after,
+	.main-nav-list:before,
+	.main-nav-list:after,
+	.admin-nav-list:before,
+	.admin-nav-list:after,
+	.nav-menu:before,
+	.nav-menu:after {
+		content: " ";
+		display: table;
+	}
+	
+	.clearfix:after,
+	.main-nav-list:after,
+	.admin-nav-list:after,
+	.nav-menu:after {
+		clear: both;
+	}
+	
+	.clearfix,
+	.main-nav-list,
+	.admin-nav-list,
+	.nav-menu {
+		*zoom: 1;
+	}
+	
+	/*------------------------- Visually hidden -------------------------*/
+	.visuallyhidden,
+	.menu-toggle {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+	
+	/*------------------------- Header -------------------------*/
+	
+	/* To flush right the admin nav list */
+	#masthead-cr {position:relative;}
+
+	.admin-nav-list {
+		position:absolute;
+		top:0;
+		right:0;
+	}
+	
+	.main-nav {margin-left:1em;}
+	
+	.main-nav-hide .nav-menu,
+	.main-nav-show .nav-menu {display:block;}
+	
+	/* Cancel out the previous style */
+	.main-nav {
+		position:relative;
+		float:right;
+		margin-top:0;
+		margin-right:0;
+	}
+	
+	.nav-menu {
+		position:static;
+		margin-top:0;
+		padding:0;
+		background-color:transparent;
+		border-radius:0;
+	}
+	
+	.nav-menu:before {display:none;}
+	
+	.main-nav {
+		position:static;
+		float:left;
+	}
+	
+	.main-nav-list {float:left;}
+	
+	.nav-menu li {float:left;}
+		
+	.nav-menu li a {
+		padding-left:1em;
+		padding-right:1em;
+		text-decoration:none;
+	}
+	
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1024px) {
+	
+	/*------------------------- Clearfix -------------------------*/
+	.clearfix:before,
+	.clearfix:after,
+	#main-cr:before,
+	#main-cr:after,
+	.footer-nav-list:before,
+	.footer-nav-list:after,
+	#colophon-cr:before,
+	#colophon-cr:after {
+		content: " ";
+		display: table;
+	}
+	
+	.clearfix:after,
+	#main-cr:after,
+	.footer-nav-list:after,
+	#colophon-cr:after {
+		clear: both;
+	}
+	
+	.clearfix,
+	#main-cr,
+	.footer-nav-list,
+	#colophon-cr {
+		*zoom: 1;
+	}
+	
+	/*------------------------- Skeleton -------------------------*/
+	#primary {
+		float: left;
+		width:75%;
+	}
+	
+	#secondary {
+		float: left;
+		width:25%;
+	}
+	
+	/*------------------------- Footer -------------------------*/
+	.footer-nav {
+		margin-bottom: 0;
+	}
+	
+	.footer-nav-list,
+	.copyright {
+		text-align: left;
+	}
+	
+	.footer-nav-list li {
+		float: left;
+	}
+	
+	.footer-nav-list li a,
+	.copyright {
+		display: block;
+		padding: .25em 1em;
+	}
+	
+	.footer-nav {
+		float: left;
+	}
+	
+	.copyright {
+		float: right;
+	}
+	
+}
+
+@media only screen and (min-width: 1140px) {
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+}
+
+/*------------------------- IE 7,8 -------------------------*/
+
+/*------------------------- Clearfix -------------------------*/
+.clearfix:before,
+.clearfix:after,
+.lt-ie9 #masthead-cr:before,
+.lt-ie9 #masthead-cr:after,
+.lt-ie9 #main-cr:before,
+.lt-ie9 #main-cr:after,
+.lt-ie9 .footer-nav-list:before,
+.lt-ie9 .footer-nav-list:after,
+.lt-ie9 #colophon-cr:before,
+.lt-ie9 #colophon-cr:after,
+.lt-ie8 .field:before,
+.lt-ie8 .field:after,
+.lt-ie9 .field-action .field-item:before,
+.lt-ie9 .field-action .field-item:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after,
+.lt-ie9 #masthead-cr:after,
+.lt-ie9 #main-cr:after,
+.lt-ie9 .footer-nav-list:after,
+.lt-ie9 #colophon-cr:after,
+.lt-ie8 .field:after,
+.lt-ie9 .field-action .field-item:after {
+	clear: both;
+}
+
+.clearfix,
+.lt-ie9 #masthead-cr,
+.lt-ie9 #main-cr,
+.lt-ie9 .footer-nav-list,
+.lt-ie9 #colophon-cr,
+.lt-ie8 .field,
+.lt-ie9 .field-action .field-item {
+	*zoom: 1;
+}
+
+/*------------------------- Visually hidden -------------------------*/
+.visuallyhidden,
+.lt-ie9 .menu-toggle {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/*------------------------- Skeleton -------------------------*/
+.lt-ie9 #primary {
+	float:right;
+	width:75%;
+}
+
+.lt-ie9 #secondary {
+	float:left;
+	width:25%;
+}
+
+/*------------------------- Header -------------------------*/
+	
+.lt-ie9 .masthead-headers {float:left;}
+
+.lt-ie9 #masthead-cr {position:relative;}
+
+.lt-ie9 .admin-nav-list {
+	position:absolute;
+	top:0;
+	right:0;
+	margin-top:1em;
+	margin-right:1em;
+}
+
+.lt-ie9 .main-nav {margin-left:1em;}
+
+.lt-ie9 .main-nav-hide .nav-menu,
+.lt-ie9 .main-nav-show .nav-menu {display:block;}
+	
+.lt-ie9 .main-nav {
+	float:left;
+}
+
+.lt-ie9 .main-nav-list {float:left;}
+	
+.lt-ie9 .nav-menu li {float:left;}
+	
+.lt-ie9 .nav-menu li a {
+	padding-left:1em;
+	padding-right:1em;
+	text-decoration:none;
+}
+
+/*------------------------- Footer -------------------------*/
+.lt-ie9 .footer-nav {margin-bottom:0;}
+
+.lt-ie9 .footer-nav-list,
+.lt-ie9 .copyright {text-align:left;}
+
+.lt-ie9 .footer-nav-list li {float:left;}
+
+.lt-ie9 .footer-nav-list li a,
+.lt-ie9 .copyright {
+	display:block;
+	padding:.25em 1em;
+}
+
+.lt-ie9 .footer-nav {float:left;}
+.lt-ie9 .copyright {float:right;}
+
+/*------------------------- Field action -------------------------*/
+.lt-ie8 .ui-btn,
+.lt-ie8 .ui-txt-select {float:left;}
+
+.lt-ie9 .ui-btn,
+.lt-ie9 .field-item > button {
+	float:left;
+	margin-right:1em;
+}

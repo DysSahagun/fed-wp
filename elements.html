@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <title>Site title</title>
+        
+        <!-- Must describe the page; ideally different from page to page
+            http://support.google.com/webmasters/bin/answer.py?hl=en&answer=35624 -->
+        <meta name="description" content="Document content description">
+        
+        <!-- Use proper sizing of content elements so that there's no need to scale higher than 1.5
+            https://developer.mozilla.org/en-US/docs/Mobile/Viewport_meta_tag -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <!-- Facebook OpenGraph tags
+            https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/#tags -->
+        <meta property="og:type" content="website"> <!-- There are other types for this -->
+        <meta property="og:site_name" content="Site title">
+        <meta property="og:url" content="http://">
+        <meta property="og:description" content="Document content description">
+        <meta property="og:image" content=""> <!-- URL of the thumbnail image that will appear in FB feeds; must be AT LEAST 200 x 200 px -->
+
+        <!-- Global stylesheets reside in css folder
+            http://html5boilerplate.com/ -->
+        <link rel="stylesheet" href="css/main.css"> <!-- Contains HTML5 Boilerplate's normalize.css and main.css -->
+        <link rel="stylesheet" href="css/ui.css"> <!-- Custom stylesheet developed by Chikka PDev Design team -->
+        
+        <!-- Variable stylesheet resides in the root directory - inspired by WordPress
+            http://wordpress.org/ -->
+        <link rel="stylesheet" href="style.css">
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+		<!-- Modernizr detects browser features and adds a class to the body tag; you may customize the build to include only the features you need; currently it only detects if the device has a touch feature
+            http://modernizr.com/ -->
+		<script src="js/vendor/modernizr.custom.80453.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="page" class="hfeed site">
+        
+            <header id="masthead" class="site-header" role="banner">
+                <div id="masthead-cr">                    
+                    <div class="masthead-headers">
+                        <h1 class="site-title"><a class="site-title-link" href="home.html" title="Site title">Site title</a></h1>
+                        <p class="site-description">Site description</p>
+                    </div>
+                    <nav id="js-main-nav" class="main-nav main-nav-hide" role="navigation">
+                        <h1 id="js-menu-toggle" class="menu-toggle">Menu</h1>
+                        <a class="assistive-text" href="#content" title="Skip to content">Skip to content</a>
+                        <div id="js-nav-menu" class="nav-menu">
+                            <ul class="main-nav-list">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                            <ul class="admin-nav-list">
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </header><!--#branding-->
+            
+            <div id="main">
+                <div id="main-cr">
+                    <div id="primary" class="site-content">
+                        <div id="content" role="main">
+                            <section>
+                                
+                                <h1>Notification</h1>
+                                <div class="notif notif-msg">
+                                    <div class="notif-cr">
+                                        <p>Notification message</p>
+                                        <a class="dismiss-link" href="#"><span class="icon"></span><span class="label">Dismiss</span></a>
+                                    </div>
+                                </div>
+                                
+                                <div class="notif notif-error">
+                                    <div class="notif-cr">
+                                        <p>Notification message</p>
+                                        <a class="dismiss-link" href="#"><span class="icon"></span><span class="label">Dismiss</span></a>
+                                    </div>
+                                </div>
+                                
+                                <h1>Dialog box</h1>
+                                <a id="js-launch-dialog" href="#">Launch dialog box</a>
+                                
+                                <h1>Table</h1>
+                                <table border="1" cellpadding="5">
+                                    <thead>
+                                        <tr>
+                                            <th>Heading 1</th>
+                                            <th>Heading 2</th>
+                                            <th>Heading 3</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Body 1</td>
+                                            <td>Body 2</td>
+                                            <td>Body 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Body 1</td>
+                                            <td>Body 2</td>
+                                            <td>Body 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Body 1</td>
+                                            <td>Body 2</td>
+                                            <td>Body 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Body 1</td>
+                                            <td>Body 2</td>
+                                            <td>Body 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Body 1</td>
+                                            <td>Body 2</td>
+                                            <td>Body 3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <h1>Pagination</h1>
+                                <div class="pagination">
+                                    <p class="page-content-info"><span class="page-content-range">1 - 5</span> of <span class="page-content-total">5</span></p>
+                                    <div class="page-nav">
+                                        <a class="prev-page" href="#" title="Previous"><span class="label">Previous</span></a>
+                                        <a class="next-page" href="#" title="Next"><span class="label">Next</span></a>
+                                    </div>
+                                </div><!-- .pagination -->
+                                
+                                <h1>Throbber</h1>
+                                <div class="loading-status loading-block">
+                                    <span class="throbber" title="Loading&hellip;"><em><span class="label">Loading&hellip;</span></em></span>
+                                    <table border="1" cellpadding="5">
+                                        <thead>
+                                            <tr>
+                                                <th>Heading 1</th>
+                                                <th>Heading 2</th>
+                                                <th>Heading 3</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Body 1</td>
+                                                <td>Body 2</td>
+                                                <td>Body 3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Body 1</td>
+                                                <td>Body 2</td>
+                                                <td>Body 3</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <h1>Form</h1>
+                                <form action="">
+                                    <fieldset>
+                                        <legend>Form</legend>                                        
+                                        <div class="field">
+                                            <label>Text input</label>
+                                            <input type="text" placeholder="What's your name?" title="Text input">
+                                            <p>Text input with UI class</p>
+                                            <div class="ui-txt">
+                                                <input type="text" placeholder="What's your name?" title="Text input">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field">
+                                            <label>Password</label>
+                                            <input type="password" placeholder="What's your password?" title="Password">
+                                            <p>Password with UI class</p>
+                                            <div class="ui-txt">
+                                                <input type="password" placeholder="What's your password?" title="Password">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field">
+                                            <div class="field-item">
+                                                <input id="checkbox-one" type="checkbox" checked>
+                                                <label class="checkbox-label" for="checkbox-one">Checkbox 1</label>
+                                            </div>                                            
+                                            <div class="field-item">
+                                                <input id="checkbox-two" type="checkbox">
+                                                <label class="checkbox-label" for="checkbox-two">Checkbox 2</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field">
+                                            <label>Select</label>
+                                            <select>
+                                                <option selected>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                            </select>
+                                            
+                                            <p>Select with UI class</p>
+                                            <div class="ui-txt ui-txt-select">
+                                                <select>
+                                                    <option selected>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field">
+                                            <div class="field-item">
+                                                <input id="radio-one" type="radio" name="radio" checked>
+                                                <label class="radio-label" for="radio-one">Radio 1</label>
+                                            </div>
+                                            <div class="field-item">
+                                                <input id="radio-two" type="radio" name="radio">
+                                                <label class="radio-label" for="radio-two">Radio 2</label>
+                                            </div>
+                                            <div class="field-item">
+                                                <input id="radio-three" type="radio" name="radio">
+                                                <label class="radio-label" for="radio-three">Radio 3</label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field">
+                                            <label class="textarea-label">Textarea</label>
+                                            <textarea placeholder="Say something" title="Textarea"></textarea>
+                                            
+                                            <p>Textarea with UI class</p>
+                                            <div class="ui-txt">
+                                                <textarea placeholder="Say something" title="Textarea"></textarea>
+                                            </div>
+                                        </div>
+                                                                                
+                                        <div class="field field-action">
+                                            <div class="field-item">
+                                                <p>Native buttons</p>
+                                                <button type="submit">Submit</button>
+                                                <button type="reset">Reset</button>
+                                                <button type="reset" disabled>Reset</button>
+                                            </div>
+                                            <div class="field-item">                                            
+                                                <p>Buttons with UI classes</p>
+                                                <div class="ui-btn ui-btn-primary">
+                                                    <button type="submit">Submit</button>
+                                                </div>
+                                                <div class="ui-btn ui-btn-secondary">
+                                                    <button type="reset">Reset</button>
+                                                </div>
+                                                <div class="ui-btn ui-btn-disabled">
+                                                    <button type="reset" disabled>Disabled</button>
+                                                </div>
+                                            </div>
+                                            <div class="field-item">
+                                                <p>Links with UI classes</p>
+                                                <div class="ui-btn ui-btn-primary">
+                                                    <a href="#">OK</a>
+                                                </div>
+                                                <div class="ui-btn ui-btn-secondary">
+                                                    <a href="#">Cancel</a>
+                                                </div>
+                                                <div class="ui-btn ui-btn-disabled">
+                                                    <a href="#">Disabled</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                                <h1>Headings</h1>
+                                <section>
+                                    <h1>Heading 1</h1>
+                                    <h2>Heading 2</h2>
+                                    <h3>Heading 3</h3>
+                                    <h4>Heading 4</h4>
+                                    <h5>Heading 5</h5>
+                                    <h6>Heading 6</h6>
+                                </section>
+                                
+                                <h1>Paragraph</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce sagittis. In nec leo ac nibh dictum consectetuer. Phasellus vitae enim et tortor volutpat sollicitudin. Curabitur non ligula. Donec sed arcu vitae eros laoreet hendrerit. Suspendisse elit. Sed dui arcu, mollis vitae, fringilla eget, facilisis id, purus. Vivamus tortor. Nullam massa. Sed metus tortor, scelerisque quis, volutpat at, pretium eu, nisi. Donec lacus pede, suscipit et, suscipit sit amet, iaculis facilisis, tellus. Curabitur bibendum ante ac tellus.</p>
+                                <p>Suspendisse potenti. Phasellus elementum. Nullam nibh arcu, tristique eu, semper sed, semper quis, enim. Aliquam convallis. Aenean vulputate pellentesque lorem. Ut volutpat, eros quis lobortis adipiscing, turpis ligula dignissim arcu, at semper lorem dui sit amet lorem. Mauris at enim eget massa tincidunt pulvinar. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur congue suscipit eros. Fusce justo massa, aliquam id, blandit sed, luctus adipiscing, diam. Nullam purus ligula, sollicitudin ut, adipiscing mollis, volutpat a, eros. Suspendisse nec risus at elit suscipit luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus porttitor. Vestibulum ut magna.</p>
+                                
+                                <h1>Lists</h1>
+                                <p>Unordered list</p>
+                                <ul>
+                                    <li>List item 1</li>
+                                    <li>List item 2</li>
+                                    <li>List item 3</li>
+                                </ul>
+                                <p>Ordered list</p>
+                                <ol>
+                                    <li>List item 1</li>
+                                    <li>List item 2</li>
+                                    <li>List item 3</li>
+                                </ol>
+                                
+                                <h1>Description list</h1>
+                                <dl>
+                                    <dt>Key</dt>
+                                    <dd>Value</dd>
+                                    <dt>Key</dt>
+                                    <dd>Value</dd>
+                                    <dt>Key</dt>
+                                    <dd>Value <a href="#">Action</a></dd>
+                                </dl>
+                                
+                                <h1>Blockquote</h1>
+                                <blockquote>Nam in augue nec justo adipiscing hendrerit. Donec vulputate libero ut est. Nullam turpis. Sed eget eros eget erat posuere egestas. Quisque vulputate consectetuer sapien. Donec facilisis tempor ligula. Integer id nulla quis enim aliquet sollicitudin. Curabitur tellus nunc, luctus ut, pharetra non, eleifend sit amet, turpis. Mauris vitae tortor at elit vehicula imperdiet. Proin porta ante et mi.</blockquote>
+                            </section>
+                        </div><!--#content-->
+                    </div><!--#primary-->                    
+                    <div id="secondary" class="widget-area" role="complementary">
+                        <div id="secondary-cr">
+                            <nav class="com-nav">
+                                <h1 class="assistive-text">Component navigation</h1>
+                                <ul class="com-nav-list">
+                                    <li><a href="#">Action 1</a></li>
+                                    <li><a href="#">Action 2</a></li>
+                                    <li><a href="#">Action 3</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div><!-- #secondary -->
+                </div>
+            </div><!--#main-->
+            
+            <footer id="colophon" role="contentinfo">
+                <div id="colophon-cr">
+                    <nav class="footer-nav">
+                        <h1 class="assistive-text">Footer navigation</h1>
+                        <ul class="footer-nav-list">
+                            <li><a href="privacy.html">Privacy</a></li>
+                            <li><a href="terms.html">Terms</a></li>
+                        </ul>
+                    </nav>
+                    <p class="copyright">&copy; 2013 Site title. All rights reserved.</p>
+                </div>
+            </footer><!--#colophon-->
+        
+        </div><!--#page-->
+        
+        <div id="dialog">
+                
+            <div id="generic-dialog" class="dialog-box">
+                <div class="dialog-box-cr">
+                    <header>
+                        <div class="dialog-headers">
+                            <h1 class="dialog-title">Title</h1>
+                            <a class="dismiss-link" href="#"><span class="icon"></span><span class="label">Dismiss</span></a>
+                        </div>
+                    </header>
+                    <div class="dialog-content">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce sagittis. In nec leo ac nibh dictum consectetuer. Phasellus vitae enim et tortor volutpat sollicitudin. Curabitur non ligula. Donec sed arcu vitae eros laoreet hendrerit. Suspendisse elit. Sed dui arcu, mollis vitae, fringilla eget, facilisis id, purus. Vivamus tortor. Nullam massa. Sed metus tortor, scelerisque quis, volutpat at, pretium eu, nisi. Donec lacus pede, suscipit et, suscipit sit amet, iaculis facilisis, tellus. Curabitur bibendum ante ac tellus.</p>
+                    </div>
+                    <div class="dialog-action">
+                        <div class="ui-btn ui-btn-primary"><a href="#">OK</a></div>
+                        <div class="ui-btn ui-btn-secondary cancel-link"><a href="#">Cancel</a></div>
+                    </div>
+                </div>
+            </div><!--.dialog-box-->
+                        
+        </div><!--.dialog-->
+        <div id="overlay"></div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
