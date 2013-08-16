@@ -71,6 +71,39 @@ Version: 1.0
     width:auto;
 }
 
+/*------------------------- Assitive text from WP -------------------------*/
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/*------------------------- WP: Genericons -------------------------*/
+.genericon:before, .menu-toggle:after {
+	display: inline-block;
+	font: 16px/1 Genericons;
+	vertical-align: text-bottom;
+}
+
 /*------------------------- Skeleton: fixes the CSS box model and adds a centered content with maximum width which could be defined in px -------------------------*/
 #masthead-cr,
 #main-cr,
@@ -81,10 +114,10 @@ Version: 1.0
 
 #masthead-cr,
 #content,
-#secondary-cr,
+#tertiary-cr,
 #colophon-cr {padding:1em;}
 
-/*------------------------- Set -------------------------*/
+/*------------------------- Page element highlight -------------------------*/
 ::-moz-selection {
 	color: #fff;
     background: #222;
@@ -95,19 +128,38 @@ Version: 1.0
     background: #222;
 }
 
+/*------------------------- From WP: Placeholder text color -------------------------*/
+::-webkit-input-placeholder {
+	color: #808080;
+}
+
+:-moz-placeholder {
+	color: #808080;
+}
+
+::-moz-placeholder {
+	color: #808080;
+}
+
+:-ms-input-placeholder {
+	color: #808080;
+}
+
+
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	padding-right: 2px; /* Don't cut off the webkit search cancel button */
+	width: 270px;
+}
+
 /* If the content is less than the viewport's height, the background might be different from the footer -- this sets the bg for the document and colophon the same to provide continuity */
 html, #colophon {background-color:transparent;}
 
-html, button, input, select, textarea,
-.ui-btn a {color:#222;}
-
-/* These elements use fonts so might as well style them consistently */
-html, button, input, select, textarea {font-family:Arial, Helvetica;}
-
 /*------------------------- Transition -------------------------*/
 .no-touch-links,
-.prev-page,
-.next-page {
+.no-touch .prev-page,
+.no-touch .next-page {
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -119,7 +171,13 @@ html, button, input, select, textarea {font-family:Arial, Helvetica;}
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {margin-bottom:.5em;}
 
 p,
-ol, ul {margin-bottom:1em;}
+ol, ul {
+	margin-bottom: 1em;
+}
+
+ol, ul {
+	list-style-position: inside;
+}
 
 p:last-child {margin-bottom:0;}
 
@@ -220,17 +278,126 @@ tr:hover td {background-color:#fafafa;}
 }
 
 /*------------------------- Forms -------------------------*/
-input[type="text"],
-input[type="email"],
-input[type="search"],
-input[type="password"],
-textarea {color:#808080;}
+/* These elements use fonts so might as well style them consistently */
+input,
+select,
+textarea,
+button {
+	font-family: inherit;
+}
+
+input,
+select,
+textarea,
+.ui-btn a {
+	color: #404040;
+}
+
+input:focus,
+textarea:focus {
+	outline: 0;
+}
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="password"]:focus,
-textarea:focus {color:#222;}
+textarea:focus {
+	color: #222;
+}
+
+/* Buttons */
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	display: inline-block;
+}
+
+button:hover,
+button:focus,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus {
+	outline: none;
+}
+
+/* Make sure videos and embeds fit their containers. */
+embed,
+iframe,
+object,
+video {
+	max-width: 100%;
+}
+
+/*------------------------- Navigation -------------------------*/
+
+ul.nav-menu,
+div.nav-menu > ul {
+	margin: 0;
+}
+
+.nav-menu li {
+	display: inline-block;
+	position: relative;
+}
+
+.nav-menu li a {
+	display: block;
+}
+
+.nav-menu li:hover > a,
+.nav-menu li a:hover {
+	background-color: #222;
+	color: #fff;
+}
+
+.nav-menu .sub-menu,
+.nav-menu .children {
+	display: none;
+	position: absolute;
+	z-index: 99999;
+}
+
+.nav-menu .sub-menu ul,
+.nav-menu .children ul {
+	border-left: 0;
+	left: 100%;
+	top: 0;
+}
+
+ul.nav-menu ul a,
+.nav-menu ul ul a {
+	margin: 0;
+}
+
+ul.nav-menu ul a:hover,
+.nav-menu ul ul a:hover {
+	background-color: #222;
+}
+
+ul.nav-menu li:hover > ul,
+.nav-menu ul li:hover > ul {
+	display: block;
+}
+
+.nav-menu .current_page_item > a,
+.nav-menu .current_page_ancestor > a,
+.nav-menu .current-menu-item > a,
+.nav-menu .current-menu-ancestor > a {
+	font-weight: bold;
+}
+
+.menu-toggle {
+	display: none;
+}
+
+.search-form {
+	display: none;
+}
 
 /*------------------------- UI texts -------------------------*/
 .ui-txt {
@@ -295,16 +462,16 @@ textarea:focus {color:#222;}
 .footer-nav {margin-bottom:1em;}
 
 .footer-nav-list,
-.copyright {text-align:center;}
+.site-info {text-align:center;}
 
 .footer-nav-list li {display:inline-block;}
 
 .footer-nav-list li a,
-.copyright {font-size:.875em;}
+.site-info {font-size:.875em;}
 
 .footer-nav-list li a {padding:.25em 1em;}
 
-.copyright {
+.site-info {
 	color: hsla(0, 0%, 0%, .5);
 }
 
@@ -334,89 +501,6 @@ textarea:focus {color:#222;}
 		*zoom: 1;
 	}
 	
-	/*------------------------- Header -------------------------*/
-	.masthead-headers {float:left;}
-	
-	.nav-menu,
-	.main-nav-show .menu-toggle {		
-		background-color:#e5e5e5;
-		border-radius:0.25em;
-	}
-	
-	.nav-menu {
-		padding:.5em .75em;
-		background-color:#e5e5e5;
-		border-top-right-radius:0;
-	}
-	
-	.nav-menu li a {
-		display:block;
-		padding:.25em;
-		white-space:nowrap;
-	}	
-	
-	.main-nav {
-		position:absolute;
-		top: 0;
-		right: 0;
-		margin-top:.5em;
-		margin-right:.5em;
-	}
-	
-	.main-nav-hide .nav-menu {display:none;}
-	.main-nav-show .nav-menu {display:block;}
-	
-	.nav-menu {
-		position:absolute;
-		top:100%;
-		right:0;
-		/* Set this up for admin nav
-		margin-top:8px; */ /* Relative to the size of the triangle in .nav-menu:before */
-	}
-	
-	.nav-menu li a {padding-right:2em;}
-	
-	/* Set this up for the admin nav
-	.nav-menu:before {
-		content:"";
-		position:absolute;
-		top:0;
-		right:0;
-		margin-top:-8px;
-		margin-right:16px;
-		width:0px;
-		height:0px;
-		border-style:solid;
-		border-width:0 8px 8px 8px;
-		border-color:transparent transparent #e5e5e5 transparent; /* Color must be same as the background color of the menu */
-	/*}*/
-	
-	.menu-toggle {
-		padding:.25em 1.5em .25em .5em;
-		font-size:1em;
-	}
-	
-	.main-nav-show .menu-toggle {
-		border-bottom-left-radius:0;
-		border-bottom-right-radius:0;
-	}
-	
-	.menu-toggle:hover {cursor:pointer;}
-	
-	.menu-toggle:before {
-		content:"";
-		position:absolute;
-		top:50%;
-		right:0;
-		margin-top:-3px;
-		margin-right:6px;
-		width: 0px;
-		height: 0px;
-		border-style: solid;
-		border-width: 6px 6px 0 6px;
-		border-color: #222 transparent transparent transparent;
-	}
-	
 	/*------------------------- Field action -------------------------*/
 	.ui-btn,
 	.field-item > button {
@@ -433,99 +517,121 @@ textarea:focus {color:#222;}
 }
 
 @media only screen and (min-width: 600px) {
-	
-	/*------------------------- Clearfix -------------------------*/
-	.clearfix:before,
-	.clearfix:after,
-	.main-nav-list:before,
-	.main-nav-list:after,
-	.admin-nav-list:before,
-	.admin-nav-list:after,
-	.nav-menu:before,
-	.nav-menu:after {
-		content: " ";
-		display: table;
-	}
-	
-	.clearfix:after,
-	.main-nav-list:after,
-	.admin-nav-list:after,
-	.nav-menu:after {
-		clear: both;
-	}
-	
-	.clearfix,
-	.main-nav-list,
-	.admin-nav-list,
-	.nav-menu {
-		*zoom: 1;
-	}
-	
-	/*------------------------- Visually hidden -------------------------*/
-	.visuallyhidden,
-	.menu-toggle {
-		border: 0;
-		clip: rect(0 0 0 0);
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-	}
-	
-	/*------------------------- Header -------------------------*/
-	
-	/* To flush right the admin nav list */
-	#masthead-cr {position:relative;}
-
-	.admin-nav-list {
-		position:absolute;
-		top:0;
-		right:0;
-	}
-	
-	.main-nav {margin-left:1em;}
-	
-	.main-nav-hide .nav-menu,
-	.main-nav-show .nav-menu {display:block;}
-	
-	/* Cancel out the previous style */
-	.main-nav {
-		position:relative;
-		float:right;
-		margin-top:0;
-		margin-right:0;
-	}
-	
-	.nav-menu {
-		position:static;
-		margin-top:0;
-		padding:0;
-		background-color:transparent;
-		border-radius:0;
-	}
-	
-	.nav-menu:before {display:none;}
-	
-	.main-nav {
-		position:static;
-		float:left;
-	}
-	
-	.main-nav-list {float:left;}
-	
-	.nav-menu li {float:left;}
-		
-	.nav-menu li a {
-		padding-left:1em;
-		padding-right:1em;
-		text-decoration:none;
-	}
-	
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 767px) {
+	
+	#masthead-cr {
+		position: relative;
+	}
+	
+	.navbar {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-top: .5em;
+		margin-right: 1em;
+	}
+	
+	/* Menu toggle */
+	.main-navigation.toggled-on {
+		position: relative;
+	}
+	
+	.menu-toggle {
+		cursor: pointer;
+		display: inline-block;
+		font: bold 16px/1.3 "Source Sans Pro", Helvetica, sans-serif;
+		margin: 0;
+	}
+
+	.menu-toggle:after {
+		content: "\f502";
+		font-size: 12px;
+		padding-left: 8px;
+		vertical-align: -4px;
+	}
+
+	.toggled-on .menu-toggle:after {
+		content: "\f500";
+		vertical-align: 2px;
+	}
+
+	.toggled-on .nav-menu,
+	.toggled-on .nav-menu > ul {
+		position: absolute;
+		display: block;
+		top: 100%;
+		min-width: 100%; /* Auto-width 1/2: Auto fill up the space occupied by the box content */
+		right: 0;
+	}
+	
+	.toggled-on li {
+		white-space: nowrap; /* Auto-width 2/2: Force no wrap for text content to define the width of the toggled menu box */
+	}
+
+	.toggled-on li,
+	.toggled-on .children {
+		display: block;
+	}
+	
+	.toggled-on .nav-menu,
+	.toggled-on .nav-menu > ul {		
+		
+	}
+
+	.toggled-on .nav-menu li > ul {
+		display: block;
+		float: none;
+		position: relative;
+		left: auto;
+		top: auto;
+	}
+
+	.toggled-on .nav-menu li > ul a {
+		color: #141412;
+		width: auto;
+	}
+
+	.toggled-on .nav-menu li:hover > a,
+	.toggled-on .nav-menu .children a {
+		background-color: transparent;
+		color: #141412;
+	}
+
+	.toggled-on .nav-menu li a:hover,
+	.toggled-on .nav-menu ul a:hover {
+		background-color: #db572f;
+		color: #fff;
+	}
+
+	ul.nav-menu,
+	div.nav-menu > ul {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 768px) {	
+	
+	/*------------------------- Header -------------------------*/
+	.masthead-headers {
+		float: left;
+	}
+	
+	.navbar {
+		float: left;
+		margin-left: 1em;
+	}
+	
+	.nav-menu li {
+		margin-right: 1em;
+	}
+	
+	.nav-menu .children li {
+		margin-right: 0;
+		white-space: nowrap;
+	}
+	
 }
 
 @media only screen and (min-width: 1024px) {
@@ -563,7 +669,7 @@ textarea:focus {color:#222;}
 		width:75%;
 	}
 	
-	#secondary {
+	#tertiary {
 		float: left;
 		width:25%;
 	}
@@ -574,7 +680,7 @@ textarea:focus {color:#222;}
 	}
 	
 	.footer-nav-list,
-	.copyright {
+	.site-info {
 		text-align: left;
 	}
 	
@@ -583,7 +689,7 @@ textarea:focus {color:#222;}
 	}
 	
 	.footer-nav-list li a,
-	.copyright {
+	.site-info {
 		display: block;
 		padding: .25em 1em;
 	}
@@ -592,7 +698,7 @@ textarea:focus {color:#222;}
 		float: left;
 	}
 	
-	.copyright {
+	.site-info {
 		float: right;
 	}
 	
@@ -667,7 +773,7 @@ textarea:focus {color:#222;}
 	width:75%;
 }
 
-.lt-ie9 #secondary {
+.lt-ie9 #tertiary {
 	float:left;
 	width:25%;
 }
@@ -709,18 +815,18 @@ textarea:focus {color:#222;}
 .lt-ie9 .footer-nav {margin-bottom:0;}
 
 .lt-ie9 .footer-nav-list,
-.lt-ie9 .copyright {text-align:left;}
+.lt-ie9 .site-info {text-align:left;}
 
 .lt-ie9 .footer-nav-list li {float:left;}
 
 .lt-ie9 .footer-nav-list li a,
-.lt-ie9 .copyright {
+.lt-ie9 .site-info {
 	display:block;
 	padding:.25em 1em;
 }
 
 .lt-ie9 .footer-nav {float:left;}
-.lt-ie9 .copyright {float:right;}
+.lt-ie9 .site-info {float:right;}
 
 /*------------------------- Field action -------------------------*/
 .lt-ie8 .ui-btn,

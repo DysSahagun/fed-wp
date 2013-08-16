@@ -16,12 +16,6 @@
         
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <meta property="og:type" content="website"> <!-- There are other types for this -->
-        <meta property="og:site_name" content="Site title">
-        <meta property="og:url" content="http://">
-        <meta property="og:description" content="Document content description">
-        <meta property="og:image" content=""> <!-- URL of the thumbnail image that will appear in FB feeds; must be AT LEAST 200 x 200 px -->
-
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
@@ -37,12 +31,16 @@
                         <h1 class="site-title"><a class="site-title-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
                         <p class="site-description"><?php bloginfo( 'description' ); ?></p>
                     </div>
-                    <nav id="js-main-nav" class="main-nav main-nav-hide" role="navigation">
-                        <h1 id="js-menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentythirteen' ); ?></h1>
-                        <a class="assistive-text" href="#content" title="Skip to content"><?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
-                        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-						<?php get_search_form(); ?>
-                    </nav>
+                    
+                    <div id="navbar" class="navbar">
+                        <nav id="site-navigation" class="navigation main-navigation" role="navigation">
+                            <h3 class="menu-toggle"><?php _e( 'Menu', 'twentythirteen' ); ?></h3>
+                            <a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentythirteen' ); ?>"><?php _e( 'Skip to content', 'twentythirteen' ); ?></a>
+                            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+                            <?php get_search_form(); ?>
+                        </nav><!-- #site-navigation -->
+                    </div><!-- #navbar -->
+            
                 </div>
             </header><!--#branding-->
             
