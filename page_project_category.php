@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Projects
+ * Template Name: Project Category
  * Description: Page template for projects category
 */
 ?>
