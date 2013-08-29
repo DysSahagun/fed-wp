@@ -4,7 +4,10 @@
 add_action('wp_enqueue_scripts', 'fed_styles');
 function fed_styles() {
     wp_register_style( 'main-style', get_stylesheet_directory_uri() . '/css/main.css', array(), '1.0', 'all' );
-    wp_enqueue_style( 'main-style' );
+	wp_register_style( 'wp-style', get_stylesheet_directory_uri() . '/css/wp.css', array(), '1.0', 'all' );
+    
+	wp_enqueue_style( 'main-style' );
+	wp_enqueue_style( 'wp-style' );
 }
 
 // Favicon

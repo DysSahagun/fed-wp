@@ -2,41 +2,30 @@
 Theme Name: Front-end Design template
 Template: twentythirteen
 Author: Dys Sahagun
-Author URI: http://intlred.com/
+Author URI: http://chikka.com/
 Description: A front-end design theme
 Version: 1.0
 */
 
-/*------------------------- Reset -------------------------*/
+/*------------------------- Unlist: removes the default bullet icons in list items -------------------------*/
 .unlist {list-style:none;}
 
-/*------------------------- Clearfix: for parents with floated children -------------------------*/
+/*------------------------- Clearfix: applied to the immediate parent of floated element/s -------------------------*/
 .clearfix:before,
-.clearfix:after,
-.pagination:before,
-.pagination:after,
-.page-nav:before,
-.page-nav:after,
-.gallery:before,
-.gallery:after {
+.clearfix:after {
     content: " ";
     display: table;
 }
 
-.clearfix:after,
-.pagination:after,
-.gallery:after {
+.clearfix:after {
     clear: both;
 }
 
-.clearfix,
-.pagination,
-.page-nav,
-.gallery {
+.clearfix {
     *zoom: 1;
 }
 
-/*------------------------- Image replacement: for elements with background image as main image such as a heading logo -------------------------*/
+/*------------------------- Image replacement: for elements with background-image as main image such as a heading logo -------------------------*/
 .ir {
 	display:block;
     background-color: transparent;
@@ -52,9 +41,8 @@ Version: 1.0
     height: 100%;
 }
 
-/*------------------------- Hide visually: for content which is part of the document outline -------------------------*/
-.visuallyhidden,
-.page-nav .label {
+/*------------------------- Hide visually: for content which is part of the document outline (hidden from view, visible to screenreaders) -------------------------*/
+.visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -75,7 +63,31 @@ Version: 1.0
     width:auto;
 }
 
-/*------------------------- Assitive text from WP -------------------------*/
+/*------------------------- Skeleton: fixes the CSS box model and adds a centered content with maximum width which could be defined in px -------------------------*/
+#masthead-cr,
+#main-cr,
+#colophon-cr {
+	margin:0 auto;
+	max-width:100%;
+}
+
+#masthead-cr,
+#content,
+#tertiary-cr,
+#colophon-cr {padding:1em;}
+
+/*------------------------- H5BP: Page element highlight -------------------------*/
+::-moz-selection {
+	color: #fff;
+    background: #222;
+}
+
+::selection {
+	color: #fff;
+    background: #222;
+}
+
+/*------------------------- WP: Assitive text -------------------------*/
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -101,38 +113,7 @@ Version: 1.0
 	z-index: 100000; /* Above WP toolbar */
 }
 
-/*------------------------- WP: Genericons -------------------------*/
-.genericon:before, .menu-toggle:after {
-	display: inline-block;
-	font: 16px/1 Genericons;
-	vertical-align: text-bottom;
-}
-
-/*------------------------- Skeleton: fixes the CSS box model and adds a centered content with maximum width which could be defined in px -------------------------*/
-#masthead-cr,
-#main-cr,
-#colophon-cr {
-	margin:0 auto;
-	max-width:100%;
-}
-
-#masthead-cr,
-#content,
-#tertiary-cr,
-#colophon-cr {padding:1em;}
-
-/*------------------------- Page element highlight -------------------------*/
-::-moz-selection {
-	color: #fff;
-    background: #222;
-}
-
-::selection {
-	color: #fff;
-    background: #222;
-}
-
-/*------------------------- From WP: Placeholder text color -------------------------*/
+/*------------------------- WP: Placeholder text color -------------------------*/
 ::-webkit-input-placeholder {
 	color: #808080;
 }
@@ -149,8 +130,7 @@ Version: 1.0
 	color: #808080;
 }
 
-
-
+/*------------------------- WP: search input fix for webkit -------------------------*/
 input[type="search"] {
 	-webkit-appearance: textfield;
 	padding-right: 2px; /* Don't cut off the webkit search cancel button */
@@ -158,12 +138,12 @@ input[type="search"] {
 }
 
 /* If the content is less than the viewport's height, the background might be different from the footer -- this sets the bg for the document and colophon the same to provide continuity */
-html, #colophon {background-color:transparent;}
+html, #colophon {
+	background-color: transparent;
+}
 
 /*------------------------- Transition -------------------------*/
-.no-touch-links,
-.no-touch .prev-page,
-.no-touch .next-page {
+.no-touch-links {
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
@@ -172,7 +152,9 @@ html, #colophon {background-color:transparent;}
 }
 
 /*------------------------- Text -------------------------*/
-#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {margin-bottom:.5em;}
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+	margin-bottom: .5em;
+}
 
 p,
 ol, ul {
@@ -213,77 +195,6 @@ th {
 }
 
 tr:hover td {background-color:#fafafa;}
-
-/*------------------------- Pagination -------------------------*/
-.page-content-info,
-.page-nav {
-	float: left;
-}
-
-.page-content-info {
-	margin-bottom: 0;
-	line-height: 2.5;
-}
-
-.page-content-range {
-	font-weight: bold;
-}
-
-.page-nav {
-	margin-left: 1em;
-}
-
-.prev-page,
-.next-page {
-	position: relative;
-	float: left;
-	display: block;
-	padding: 1.25em;
-}
-
-.prev-page:active,
-.next-page:active {
-	top: 1px;
-}
-
-.prev-page:hover,
-.next-page:hover {
-	background-color: #ccc;
-	background-color: hsla(0, 0%, 0%, .15);
-	border-radius: .25em;
-}
-
-.prev-page:before,
-.next-page:before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	margin-top: -9px;
-	width: 0;
-	height: 0;
-}
-
-.prev-page:before {
-	left: 50%;
-	margin-left: -8px;
-}
-
-.next-page:before {
-	right: 50%;
-	margin-right: -8px;
-}
-
-.prev-page:before {
-	border-style: solid;
-	border-width: 9px 12px 9px 0;
-	border-color: transparent #808080 transparent transparent;
-}
-
-.next-page:before {
-	border-style: solid;
-	border-width: 9px 0 9px 12px;
-	border-color: transparent transparent transparent #808080;
-}
 
 /*------------------------- Forms -------------------------*/
 /* These elements use fonts so might as well style them consistently */
@@ -464,125 +375,6 @@ ul.nav-menu li:hover > ul,
 .nav-menu li a {
 	color:#222;
 	text-decoration:none;
-}
-
-/**
- * 5.4 Galleries
- * ----------------------------------------------------------------------------
- */
-
-.gallery {
-	margin-bottom: 20px;
-	margin-left: -4px;
-}
-
-.gallery-item {
-	float: left;
-	margin: 0 4px 4px 0;
-	overflow: hidden;
-	position: relative;
-}
-
-.gallery-columns-1.gallery-size-medium,
-.gallery-columns-1.gallery-size-thumbnail,
-.gallery-columns-2.gallery-size-thumbnail,
-.gallery-columns-3.gallery-size-thumbnail {
-	display: table;
-	margin: 0 auto 20px;
-}
-
-.gallery-columns-1 .gallery-item,
-.gallery-columns-2 .gallery-item,
-.gallery-columns-3 .gallery-item {
-	text-align: center;
-}
-
-.gallery-columns-4 .gallery-item {
-	max-width: 23%;
-	max-width: -webkit-calc(25% - 4px);
-	max-width:         calc(25% - 4px);
-}
-
-.gallery-columns-5 .gallery-item {
-	max-width: 19%;
-	max-width: -webkit-calc(20% - 4px);
-	max-width:         calc(20% - 4px);
-}
-
-.gallery-columns-6 .gallery-item {
-	max-width: 15%;
-	max-width: -webkit-calc(16.7% - 4px);
-	max-width:         calc(16.7% - 4px);
-}
-
-.gallery-columns-7 .gallery-item {
-	max-width: 13%;
-	max-width: -webkit-calc(14.28% - 4px);
-	max-width:         calc(14.28% - 4px);
-}
-
-.gallery-columns-8 .gallery-item {
-	max-width: 11%;
-	max-width: -webkit-calc(12.5% - 4px);
-	max-width:         calc(12.5% - 4px);
-}
-
-.gallery-columns-9 .gallery-item {
-	max-width: 9%;
-	max-width: -webkit-calc(11.1% - 4px);
-	max-width:         calc(11.1% - 4px);
-}
-
-.gallery-columns-1 .gallery-item:nth-of-type(1n),
-.gallery-columns-2 .gallery-item:nth-of-type(2n),
-.gallery-columns-3 .gallery-item:nth-of-type(3n),
-.gallery-columns-4 .gallery-item:nth-of-type(4n),
-.gallery-columns-5 .gallery-item:nth-of-type(5n),
-.gallery-columns-6 .gallery-item:nth-of-type(6n),
-.gallery-columns-7 .gallery-item:nth-of-type(7n),
-.gallery-columns-8 .gallery-item:nth-of-type(8n),
-.gallery-columns-9 .gallery-item:nth-of-type(9n) {
-	margin-right: 0;
-}
-
-.gallery-caption {
-	background-color: rgba(0, 0, 0, 0.7);
-	box-sizing: border-box;
-	color: #fff;
-	font-size: 14px;
-	line-height: 1.3;
-	margin: 0;
-	max-height: 50%;
-	opacity: 0;
-	padding: 2px 8px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	text-align: left;
-	-webkit-transition: opacity 400ms ease;
-	transition:         opacity 400ms ease;
-	width: 100%;
-}
-
-.gallery-caption:before {
-	box-shadow: 0 -10px 15px #000 inset;
-	content: "";
-	height: 100%;
-	min-height: 49px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-}
-
-.gallery-item:hover .gallery-caption {
-	opacity: 1;
-}
-
-.gallery-columns-7 .gallery-caption,
-.gallery-columns-8 .gallery-caption,
-.gallery-columns-9 .gallery-caption {
-	display: none;
 }
 
 /*------------------------- Footer -------------------------*/

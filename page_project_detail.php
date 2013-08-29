@@ -19,7 +19,44 @@
                                         </div>
                                         <?php endif; ?>
                 
-                                        <h1 class="entry-title"><?php the_title(); ?></h1>
+                                        <div class="entry-header-pri">
+											<?php // Display breadcrumb navigation
+                                                if (is_page() && !is_front_page() || is_single() || is_category()) {
+                                                    if (is_page()) {
+                                                        $ancestors = get_post_ancestors($post);
+                                             
+                                                        if ($ancestors) {
+                                                            $ancestors = array_reverse($ancestors);
+                                                            echo '<ul class="breadcrumbs">';
+                                             
+                                                            foreach ($ancestors as $crumb) {
+                                                                echo '<li><a href="'.get_permalink($crumb).'">'.get_the_title($crumb).'</a></li>';
+                                                            }
+                                                        }
+                                                    }
+                                                    if (is_single()) {
+                                                        $category = get_the_category();
+                                                        echo '<ul class="breadcrumbs">';
+                                                        echo '<li><a href="'.get_category_link($category[0]->cat_ID).'">'.$category[0]->cat_name.'</a></li>';
+                                                    }
+                                                    if (is_category()) {
+                                                        $category = get_the_category();
+                                                        echo '<ul class="breadcrumbs">';
+                                                        echo '<li>'.$category[0]->cat_name.'</li>';
+                                                    }
+                                                    echo '</ul>';
+                                                } elseif (is_front_page()) {
+                                                    // Front page
+                                                    echo '<ul class="breadcrumbs">';
+                                                    echo '<li class="front_page"><a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a></li>';
+                                                    echo '<li class="current">Home Page</li>';
+                                                    echo '</ul>';
+                                                }
+                                            ?><!-- .breadcrumbs -->
+                                            
+                                            <h1 class="entry-title"><?php the_title(); ?></h1>
+                                        </div><!-- .entry-header-pri -->
+                                        
                                     </header><!-- .entry-header -->
                 
                                     <div class="entry-content">

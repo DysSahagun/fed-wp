@@ -1,0 +1,127 @@
+/*------------------------- Clearfix -------------------------*/
+.clearfix:before,
+.clearfix:after,
+.pagination:before,
+.pagination:after,
+.page-nav:before,
+.page-nav:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after,
+.pagination:after,
+.page-nav:after {
+    clear: both;
+}
+
+.clearfix,
+.pagination,
+.page-nav {
+    *zoom: 1;
+}
+
+/*------------------------- Hide visually -------------------------*/
+.visuallyhidden,
+.page-nav .label {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.reverse {
+    clip: rect(auto, auto, auto, auto);
+    height:auto;
+    margin:auto;
+    overflow:auto;
+    padding:inherit;
+    position:inherit;
+    width:auto;
+}
+
+/*------------------------- Transition -------------------------*/
+.no-touch-links,
+.no-touch .prev-page,
+.no-touch .next-page {
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+/*------------------------- Pagination -------------------------*/
+.page-content-info,
+.page-nav {
+	float: left;
+}
+
+.page-content-info {
+	margin-bottom: 0;
+	line-height: 2.5;
+}
+
+.page-content-range {
+	font-weight: bold;
+}
+
+.page-nav {
+	margin-left: 1em;
+}
+
+.prev-page,
+.next-page {
+	position: relative;
+	float: left;
+	display: block;
+	padding: 1.25em;
+}
+
+.prev-page:active,
+.next-page:active {
+	top: 1px;
+}
+
+.prev-page:hover,
+.next-page:hover {
+	background-color: #ccc;
+	background-color: hsla(0, 0%, 0%, .15);
+	border-radius: .25em;
+}
+
+.prev-page:before,
+.next-page:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin-top: -9px;
+	width: 0;
+	height: 0;
+}
+
+.prev-page:before {
+	left: 50%;
+	margin-left: -8px;
+}
+
+.next-page:before {
+	right: 50%;
+	margin-right: -8px;
+}
+
+.prev-page:before {
+	border-style: solid;
+	border-width: 9px 12px 9px 0;
+	border-color: transparent #808080 transparent transparent;
+}
+
+.next-page:before {
+	border-style: solid;
+	border-width: 9px 0 9px 12px;
+	border-color: transparent transparent transparent #808080;
+}
